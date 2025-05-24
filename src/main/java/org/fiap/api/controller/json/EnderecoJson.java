@@ -1,18 +1,21 @@
 package org.fiap.api.controller.json;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
 public class EnderecoJson {
 
     @NotBlank(message = "Rua vazia! Insira uma rua válida.")
     private String rua;
 
-    @NotBlank(message = "Número vazio! Insira um número válido.")
+    @NotNull(message = "Número vazio! Insira um número válido.")
     private int numero;
 
     private String complemento;
